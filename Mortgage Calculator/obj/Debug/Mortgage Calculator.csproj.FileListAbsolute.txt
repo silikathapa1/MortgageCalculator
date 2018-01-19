@@ -1,0 +1,42 @@
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\ApplicationInsights.config
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\Mortgage Calculator.dll.config
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\Mortgage Calculator.dll
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\Mortgage Calculator.pdb
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\Antlr3.Runtime.dll
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\Microsoft.AI.Web.dll
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\Microsoft.ApplicationInsights.dll
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\Newtonsoft.Json.dll
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\System.Web.Helpers.dll
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\System.Web.Mvc.dll
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\System.Web.Optimization.dll
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\System.Web.Razor.dll
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\System.Web.WebPages.Deployment.dll
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\System.Web.WebPages.dll
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\System.Web.WebPages.Razor.dll
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\WebGrease.dll
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\System.Web.Helpers.xml
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\System.Web.Mvc.xml
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\System.Web.Optimization.xml
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\System.Web.Razor.xml
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\System.Web.WebPages.xml
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\System.Web.WebPages.Deployment.xml
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\System.Web.WebPages.Razor.xml
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\Antlr3.Runtime.pdb
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\Newtonsoft.Json.xml
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\Microsoft.ApplicationInsights.xml
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\bin\Microsoft.AI.Web.xml
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\obj\Debug\Mortgage Calculator.csproj.CoreCompileInputs.cache
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\obj\Debug\Mortgage Calculator.dll
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\obj\Debug\Mortgage Calculator.pdb
+C:\Users\silik\source\repos\Mortgage Calculator\Mortgage Calculator\obj\Debug\Mortgage Calculator.csprojResolveAssemblyReference.cache

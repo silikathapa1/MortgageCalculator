@@ -1,0 +1,78 @@
+﻿using Mortgage_Calculator.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace Mortgage_Calculator.Utility
+{
+    public class amortChart
+    {
+       
+        protected double calcPaymentAmount(double principalAmt, double noOfPayment, double iRate)
+        {
+            double monthlyInterest;
+            double intRate = (iRate / 100) / 12;
+            monthlyInterest = (principalAmt * (Math.Pow((1 + intRate), noOfPayment)) * intRate / (Math.Pow((1 + intRate), noOfPayment) - 1));
+            return Convert.ToDouble(monthlyInterest);
+        }
+
+        public List<AmortTable> calcAmortTable(CalculationView cv)
+        {
+            AmortTable amortTable = new AmortTable();
+        
+
+            //convert interest rate to decimal form
+            double dblInterestToDecimal = cv.interestRate / 100;
+            //calculate interest
+            double dblConvertInterest = cv.interestRate / 100 * 1 / 12;
+
+            //calculate the total number of payments (n * 12)
+            int intYears = (int)cv.amortizationPeriod;     //years
+                                                   //int intNumOfPayments = intYears * 12;    //In Years (with Month wise)
+            int intNumOfPayments = intYears *12;  // Only number of installments basis like (2 Installment or 3 Installment)
+
+            amortTable.MonthlyPayAmount = calcPaymentAmount(cv.mortgageAmount, intNumOfPayments, cv.interestRate);
+
+            // double loanPrincipal = cv.mortgageAmount;
+            double interest; //= loanPrincipal * dblConvertInterest;
+            double DeductedPrincipal; //= amortTable.MonthlyPayAmount - amortTable.interest;       // new principle after each month amount payment
+            double decNewBalance; // = loanPrincipal - DeductedPrincipal;
+           // System.Diagnostics.Debug.WriteLine("loan princi  " + loanPrincipal + " " + interest + "dec prin  " + DeductedPrincipal + " new blc " + decNewBalance);
+           List <AmortTable> amortList = new List<AmortTable>();
+
+            decNewBalance = cv.mortgageAmount;
+            int pNo = 1;
+
+            while (pNo < intNumOfPayments)
+            {
+
+                AmortTable am = new AmortTable();
+                am.PaymentNo = pNo;
+                am.MonthlyPayAmount = Math.Round(amortTable.MonthlyPayAmount,2);
+                am.interest = Math.Round(decNewBalance * dblConvertInterest,2);
+                am.DeductedPrincipal = Math.Round(amortTable.MonthlyPayAmount - am.interest,2);
+                am.balance = Math.Round(decNewBalance - am.DeductedPrincipal,2);
+
+                System.Diagnostics.Debug.WriteLine("interest Paid  " + am.interest+ "deducted p  " + am.DeductedPrincipal + "new balance  " + am.balance);
+                interest = am.interest;
+                DeductedPrincipal = am.DeductedPrincipal;
+                decNewBalance = am.balance;
+
+                amortList.Add(am);
+
+                pNo += 1;
+
+            }
+            if(pNo == intNumOfPayments)
+            {
+                AmortTable amtTab = new AmortTable();
+                amtTab.PaymentNo = pNo;
+                amtTab.balance = 0;
+                amortList.Add(amtTab);
+            }
+
+            return amortList;
+        }
+    }
+}

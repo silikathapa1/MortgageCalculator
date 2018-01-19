@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@using Mortgage_Calculator.Models
+
+<div>
+
+    <h2> Calculation</h2>
+    @Html.Partial("CalcForm", new CalculationView())
+
+    <br />
+    <h2> Register- New users</h2>
+
+
+</div>
+
+
+<!--<section class="form-elegant">
+
+
+<div class="card">
+
+    <div class="card-body mx-4">
+
+
+        <div class="text-center">
+            <h3 class="dark-grey-text mb-5"><strong></strong></h3>
+        </div>
+
+
+        <div class="md-form">
+            <input type="text" id="M-amount" class="form-control">
+            <label for="M-amount">Mortgage Amount</label>
+        </div>
+
+        <div class="md-form">
+            <input type="text" id="Interest-rate" class="form-control">
+            <label for="Interest-rate">Interest Rate</label>
+        </div>
+
+
+        <div class="md-form">
+            <input type="text" id="period" class="form-control">
+            <label for="a-period">Amortization Period</label>
+        </div>
+
+        <div class="md-form">
+            <input type="text" id="d-payment" class="form-control">
+            <label for="payment">Down Payment</label>
+        </div>
+        <!--<div class="md-form">
+            <input type="text" id="d-payment" class="form-control">
+            <label for="payment">Payment Type</label>
+        </div>
+        <div class="md-form">
+            <input type="text" id="" class="form-control">
+            <label for="payment">Result</label>
+        </div>
+        <input type="text" name="firstname"><br>
+        <div class="text-center mb-3">
+            <button type="button" class="btn blue-gradient btn-block btn-rounded z-depth-1a">Calculate</button>
+        </div>
+
+    </div>
+
+
+</div>
+
+</section>
+-->

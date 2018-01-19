@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "CalcForm";
+}
+@using Mortgage_Calculator.Models;
+
+
+@model Mortgage_Calculator.Models.CalculationView
+
+<h2>CalcForm</h2>
+
+@{
+    using (Html.BeginForm("calculateAmortTable", "Home", FormMethod.Post))
+    {
+        <label for="M-amount">Mortgage Amount</label>
+        @Html.TextBoxFor(m => m.mortgageAmount)
+
+        <br />
+
+        <label for="Interest-rate">Interest Rate</label>
+        @Html.TextBoxFor(m => m.interestRate)
+
+        <label for="a-period">Amortization Period</label>
+        @Html.TextBoxFor(m => m.amortizationPeriod)
+
+        <label for="payment">Down Payment</label>
+        @Html.TextBoxFor(m => m.downpayment)
+
+       
+        <input type="submit" value="Calculate" />
+
+    }
+}
