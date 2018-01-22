@@ -11,27 +11,31 @@
 
 
 
-<h2>AmortChart</h2>
+<div class="text-center">
+    <h3 class="dark-grey-text mb-5"><strong>Amortization Table</strong></h3>
+</div>
 
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Payment No.</th>
+            <th scope="col">Payment Amount</th>
+            <th scope="col">Interest</th>
+            <th scope="col">Principal</th>
+            <th scope="col">Balance</th>
+                    </tr>
+    </thead>
+    <tbody>
+        @foreach (var d in Model)
+        {
+            <tr>
+                <td>@d.PaymentNo</td>
+                <td>@d.MonthlyPayAmount</td>
+                <td>@d.interest</td>
+                <td>@d.DeductedPrincipal</td>
+                <td>@d.balance</td>
 
-<table class="table table-bordered table-responsive table-hover">
-    <tr>
-        <th>Payment No.</th>
-        <th>Payment Amount</th>
-        <th>Interest</th>
-        <th>Principal</th>
-        <th>Balance</th>
-
-    </tr>
-    @foreach (var d in Model)
-    {
-    <tr>
-        <td>@d.PaymentNo</td>
-        <td>@d.MonthlyPayAmount</td>
-        <td>@d.interest</td>
-        <td>@d.DeductedPrincipal</td>
-        <td>@d.balance</td>
-
-    </tr>
-    }
+            </tr>
+        }
+    </tbody>
 </table>
