@@ -6,27 +6,43 @@
 
 @model Mortgage_Calculator.Models.CalculationView
 
-<h2>CalcForm</h2>
+<div class="text-center">
+    <h3 class="dark-grey-text mb-5"><strong>Mortgage Calculator</strong></h3>
+</div>
+
 
 @{
     using (Html.BeginForm("calculateAmortTable", "Home", FormMethod.Post))
     {
-        <label for="M-amount">Mortgage Amount</label>
-        @Html.TextBoxFor(m => m.mortgageAmount)
 
-        <br />
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label for="M-amount">Mortgage Amount</label>
+            <div class="col-sm-10">
+                @Html.TextBoxFor(m => m.mortgageAmount)
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label for="Interest-rate">Interest Rate</label>
+            <div class="col-sm-10">
+                @Html.TextBoxFor(m => m.interestRate)
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label for="a-period">Amortization Period</label>
+            <div class="col-sm-10">
+                @Html.TextBoxFor(m => m.amortizationPeriod)
+            </div>
+        </div>
 
-        <label for="Interest-rate">Interest Rate</label>
-        @Html.TextBoxFor(m => m.interestRate)
-
-        <label for="a-period">Amortization Period</label>
-        @Html.TextBoxFor(m => m.amortizationPeriod)
-
-        <label for="payment">Down Payment</label>
-        @Html.TextBoxFor(m => m.downpayment)
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label for="Down-payment">Down Payment</label>
+            <div class="col-sm-10">
+                @Html.TextBoxFor(m => m.downpayment)
+            </div>
+        </div>
 
 
-        <input type="submit" value="Calculate" />
+        <input type="submit" class="btn btn-primary" value="Calculate" />
 
     }
 }
