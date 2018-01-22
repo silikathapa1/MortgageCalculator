@@ -44,33 +44,38 @@ namespace Mortgage_Calculator.Utility
             decNewBalance = cv.mortgageAmount;
             int pNo = 1;
 
-            while (pNo < intNumOfPayments)
+            while (pNo <= intNumOfPayments)
             {
 
                 AmortTable am = new AmortTable();
                 am.PaymentNo = pNo;
-                am.MonthlyPayAmount = Math.Round(amortTable.MonthlyPayAmount,2);
-                am.interest = Math.Round(decNewBalance * dblConvertInterest,2);
-                am.DeductedPrincipal = Math.Round(amortTable.MonthlyPayAmount - am.interest,2);
-                am.balance = Math.Round(decNewBalance - am.DeductedPrincipal,2);
-
+                am.MonthlyPayAmount = Math.Round(amortTable.MonthlyPayAmount,3);
+                am.interest = Math.Round(decNewBalance * dblConvertInterest,3);
+                am.DeductedPrincipal = Math.Round(amortTable.MonthlyPayAmount - am.interest,3);
+                am.balance = Math.Round(decNewBalance - am.DeductedPrincipal,3);
+                if (am.balance < 1)
+                {
+                    am.balance = 0.00;
+                }
                 System.Diagnostics.Debug.WriteLine("interest Paid  " + am.interest+ "deducted p  " + am.DeductedPrincipal + "new balance  " + am.balance);
                 interest = am.interest;
                 DeductedPrincipal = am.DeductedPrincipal;
                 decNewBalance = am.balance;
-
+             
+                
                 amortList.Add(am);
 
                 pNo += 1;
 
             }
-            if(pNo == intNumOfPayments)
+        /*    if(pNo == intNumOfPayments)
             {
                 AmortTable amtTab = new AmortTable();
                 amtTab.PaymentNo = pNo;
                 amtTab.balance = 0;
                 amortList.Add(amtTab);
             }
+            */
 
             return amortList;
         }
