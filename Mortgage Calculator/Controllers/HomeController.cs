@@ -21,7 +21,7 @@ namespace Mortgage_Calculator.Controllers
         {
             Utility.amortChart ac = new Utility.amortChart();
             List<AmortTable> listView;
-            System.Diagnostics.Debug.WriteLine("ullu thees ho ta");
+           
             listView = ac.calcAmortTable(cv);
             
             foreach(AmortTable x in listView)

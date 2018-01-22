@@ -32,13 +32,15 @@ namespace Mortgage_Calculator.Utility
                                                    //int intNumOfPayments = intYears * 12;    //In Years (with Month wise)
             int intNumOfPayments = intYears *12;  // Only number of installments basis like (2 Installment or 3 Installment)
 
+            if (cv.downpayment != 0)
+            {
+               cv.mortgageAmount = cv.mortgageAmount - cv.downpayment;
+            }
             amortTable.MonthlyPayAmount = calcPaymentAmount(cv.mortgageAmount, intNumOfPayments, cv.interestRate);
 
-            // double loanPrincipal = cv.mortgageAmount;
             double interest; //= loanPrincipal * dblConvertInterest;
             double DeductedPrincipal; //= amortTable.MonthlyPayAmount - amortTable.interest;       // new principle after each month amount payment
             double decNewBalance; // = loanPrincipal - DeductedPrincipal;
-           // System.Diagnostics.Debug.WriteLine("loan princi  " + loanPrincipal + " " + interest + "dec prin  " + DeductedPrincipal + " new blc " + decNewBalance);
            List <AmortTable> amortList = new List<AmortTable>();
 
             decNewBalance = cv.mortgageAmount;
@@ -68,14 +70,7 @@ namespace Mortgage_Calculator.Utility
                 pNo += 1;
 
             }
-        /*    if(pNo == intNumOfPayments)
-            {
-                AmortTable amtTab = new AmortTable();
-                amtTab.PaymentNo = pNo;
-                amtTab.balance = 0;
-                amortList.Add(amtTab);
-            }
-            */
+       
 
             return amortList;
         }
