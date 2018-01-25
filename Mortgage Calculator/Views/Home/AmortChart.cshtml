@@ -6,7 +6,6 @@
 }
 
 
-
 @using Mortgage_Calculator.Models;
 
 
@@ -23,18 +22,19 @@
             <th scope="col">Interest</th>
             <th scope="col">Principal</th>
             <th scope="col">Balance</th>
-                    </tr>
+             <th scope="col">Extra Payment</th>
+        </tr>
     </thead>
     <tbody>
         @foreach (var d in Model)
         {
             <tr>
                 <td>@d.PaymentNo</td>
-                <td>@d.MonthlyPayAmount</td>
+                <td>@d.displayMAmount</td>
                 <td>@d.interest</td>
                 <td>@d.DeductedPrincipal</td>
                 <td>@d.balance</td>
-
+                <td>@d.extraPayment</td>
             </tr>
         }
     </tbody>

@@ -46,6 +46,21 @@ namespace Mortgage_Calculator.Utility
             decNewBalance = cv.mortgageAmount;
             int pNo = 1;
 
+            //extra payment calculation
+            System.Diagnostics.Debug.WriteLine("extra payment  " + cv.extraPaymentOption);
+            if (cv.extraPayment != 0)
+            {
+                if (string.Equals(cv.extraPaymentOption.ToString(), "Monthly", StringComparison.OrdinalIgnoreCase))
+                {
+                    System.Diagnostics.Debug.WriteLine("kkk ");
+                    amortTable.MonthlyPayAmount += cv.extraPayment;
+                }else if (string.Equals(cv.extraPaymentOption.ToString(), "Yearly", StringComparison.OrdinalIgnoreCase))
+                {
+                    cv.extraPayment = cv.extraPayment / 12;
+                    amortTable.MonthlyPayAmount += cv.extraPayment;
+                }
+            }
+
             while (pNo <= intNumOfPayments)
             {
 
@@ -55,23 +70,23 @@ namespace Mortgage_Calculator.Utility
                 am.interest = Math.Round(decNewBalance * dblConvertInterest,3);
                 am.DeductedPrincipal = Math.Round(amortTable.MonthlyPayAmount - am.interest,3);
                 am.balance = Math.Round(decNewBalance - am.DeductedPrincipal,3);
+                am.extraPayment = cv.extraPayment;
+                am.displayMAmount = calcPaymentAmount(cv.mortgageAmount, intNumOfPayments, cv.interestRate);
                 if (am.balance < 1)
                 {
                     am.balance = 0.00;
+                    intNumOfPayments = 0;
                 }
                 System.Diagnostics.Debug.WriteLine("interest Paid  " + am.interest+ "deducted p  " + am.DeductedPrincipal + "new balance  " + am.balance);
                 interest = am.interest;
                 DeductedPrincipal = am.DeductedPrincipal;
                 decNewBalance = am.balance;
-             
-                
+                             
                 amortList.Add(am);
-
                 pNo += 1;
 
             }
        
-
             return amortList;
         }
     }

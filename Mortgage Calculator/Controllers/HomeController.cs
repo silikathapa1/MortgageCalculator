@@ -17,7 +17,7 @@ namespace Mortgage_Calculator.Controllers
         }
 
         [HttpPost]
-        public ActionResult calculateAmortTable(CalculationView cv)
+        public ActionResult Index(CalculationView cv)
         {
             Utility.amortChart ac = new Utility.amortChart();
             List<AmortTable> listView;
@@ -28,8 +28,9 @@ namespace Mortgage_Calculator.Controllers
             {
                 System.Diagnostics.Debug.WriteLine("new data " + x.interest);
             }
-            // If we got this far, something failed, redisplay form
-            return PartialView("AmortChart", listView);
+            ViewBag.AmortCharts = listView;
+                // If we got this far, something failed, redisplay form
+            return View();
         }
 
         
