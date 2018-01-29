@@ -13,6 +13,7 @@ namespace Mortgage_Calculator.Controllers
         
         public ActionResult Index()
         {
+            ViewBag.AmortCharts = null;
             return View();
         }
 
@@ -20,16 +21,13 @@ namespace Mortgage_Calculator.Controllers
         public ActionResult Index(CalculationView cv)
         {
             Utility.amortChart ac = new Utility.amortChart();
+
             List<AmortTable> listView;
            
             listView = ac.calcAmortTable(cv);
             
-            foreach(AmortTable x in listView)
-            {
-                System.Diagnostics.Debug.WriteLine("new data " + x.interest);
-            }
-            ViewBag.AmortCharts = listView;
-                // If we got this far, something failed, redisplay form
+                       ViewBag.AmortCharts = listView;
+                // If something failed, redisplay form
             return View();
         }
 
