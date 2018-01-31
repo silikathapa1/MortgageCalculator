@@ -9,7 +9,7 @@ namespace Mortgage_Calculator.Utility
     public class amortChart
     {
 
-        //Monthly installment amount calculation
+        //Monthly installment payment amount calculation
         protected double calcPaymentAmount(double principalAmt, double noOfPayment, double iRate)
         {
             double monthlyInterest;
@@ -59,12 +59,13 @@ namespace Mortgage_Calculator.Utility
         
            for (int x=1; x<=intNumOfPayments; x++)
             {
-
+                
                 AmortTable am = new AmortTable();
-               
+                //for displaying Monthly installment payment amount 
+                am.displayMAmount = Math.Round(amortTable.MonthlyPayAmount, 3);
                 am.PaymentNo = x;
                 am.MonthlyPayAmount = Math.Round(amortTable.MonthlyPayAmount,3);
-              
+                
                 //Adjustment for final installment payment
                 if (decNewBalance < am.MonthlyPayAmount)
                 {
